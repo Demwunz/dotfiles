@@ -6,7 +6,7 @@ cd "$DIR" || exit
 . ../scripts/functions.sh
 
 SOURCE="$(realpath .)"
-DESTINATION="$(realpath ~/Library/Application\ Support/VSCodium/User/)"
+DESTINATION="$(realpath ~/Library/Application\ Support/Code/User/)"
 
 info "Setting up VSCodium..."
 

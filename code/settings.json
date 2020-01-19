@@ -1,6 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "helium-icon-theme",
     "workbench.colorTheme": "Gruvbox Dark",
 
     "editor.rulers": [79],
@@ -44,5 +44,5 @@
     },
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,
-    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh"
 }

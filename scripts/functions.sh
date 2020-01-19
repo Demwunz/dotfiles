@@ -55,11 +55,11 @@ info() {
 }
 
 success() {
-    coloredEcho "$1" green " 🎉 ========>"
+    coloredEcho "$1" green " 🐸 ========>"
 }
 
 error() {
-    coloredEcho "$1" red " 💩 ========>"
+    coloredEcho "$1" red " 🧨 ========>"
 }
 
 substep_info() {

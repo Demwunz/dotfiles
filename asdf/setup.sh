@@ -11,20 +11,17 @@ DESTINATION="$(realpath ~)"
 info "Configuring asdf..."
 
 find * -type f -name ".tool-versions" | while read fn; do
+
     fn=$(basename "$fn")
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
-done
-
-find * -type f -name "*.list" | while read fn; do
-    cmd="${fn%.*}"
-    set -- $cmd
-    install="$cmd install"
-    global="$cmd global"
 
     info "Installing $1 runtime..."
 
     while read package; do
-
+        install="asdf install $package"
+        global="asdf global $package"
+        set -- $install
+        set -- $global
         runtime="${package%' '*}"
 
         if [[ $runtime == "nodejs" ]];then
@@ -33,13 +30,13 @@ find * -type f -name "*.list" | while read fn; do
         fi
 
         substep_info "Installing $package..."
-        $install $package
-        $global $package
-        substep_success "$package set to global"
+        $install
+        $global
 
     done < "$fn"
 
     success "Finished installing $1"
+
 done
 
 success "Finished configuring asdf."

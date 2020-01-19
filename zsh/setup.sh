@@ -16,15 +16,21 @@ find . -type f -name ".*" | while read fn; do
 done
 
 set_brew_zsh() {
-    current="$(which zsh)"
+    current="$(which $SHELL)"
+    brewzsh='/usr/local/bin/zsh'
 
-    if [[ "$current" == '/usr/local/bin/zsh' ]]; then
-        success "zsh shell is already set up."
+    if [[ "$current" ==  $brewzsh ]]; then
+        success "zsh shell via brew is already set up."
     else
-        info "changing zsh to updated brew version, password required..."
-        # https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/
+        info "changing shell to brew zsh version, password required..."
         sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
-        substep_info "ZSH will be changed to brew version when you restart your terminal"
+        substep_info "Using $brewzsh to install zsh dependencies"
+        exec $brewzsh
+
+        substep_info "Installing zinit for zsh"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+        sh zinit self-update
+        source ~/.zshrc
     fi
 }
 
@@ -33,3 +39,4 @@ if set_brew_zsh; then
 else
     error "Failed setting up zsh shell."
 fi
+

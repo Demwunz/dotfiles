@@ -10,9 +10,9 @@ DESTINATION="$(realpath ~/)"
 
 info "Setting up bash settings..."
 
-find . -type f -name ".*" | while read dotfile; do
-    dotfile=$(basename "$dotfile")
-    symlink "$SOURCE/$dotfile" "$DESTINATION/$dotfile"
+find . -type f -name ".*" | while read fn; do
+    fn=$(basename "$fn")
+    symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 
 success "Finished setting up bash"

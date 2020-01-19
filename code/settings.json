@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "One Monokai",
+    "workbench.colorTheme": "Gruvbox Dark",
 
     "editor.rulers": [79],
     "editor.roundedSelection": false,
@@ -11,22 +11,16 @@
     "editor.renderWhitespace": "boundary",
     "editor.renderIndentGuides": true,
     "editor.suggestSelection": "first",
-    // "editor.fontWeight": "600",
 
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "window.zoomLevel": 0,
 
-    "python.linting.pylintEnabled": true,
-    "python.linting.pep8Enabled": false,
-    "python.pythonPath": "/usr/local/bin/python3",
-
     "eslint.validate": [
         "javascript",
         "javascriptreact",
         "typescript",
-        "typescriptreact",
-        "vue"
+        "typescriptreact"
     ],
 
     "[typescript]": {
@@ -48,12 +42,7 @@
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true
     },
-    "gitlens.keymap": "alternate",
-    "clang.cxxflags": ["-std=c++11"],
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,
-    "files.associations": {
-        "*.cash": "solidity"
-    },
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
 }

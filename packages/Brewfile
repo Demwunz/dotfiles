@@ -34,10 +34,8 @@ brew "libidn2"
 brew "httpie"
 brew "hub"
 brew "ipfs"
-brew "jq"
 brew "libxslt"
 brew "neovim"
-brew "peco"
 brew "ranger"
 brew "ripgrep"
 brew "screenfetch"
@@ -49,7 +47,6 @@ brew "wireguard-tools"
 brew "wxmac"
 brew "yarn"
 brew "zsh"
-brew "zsh-completions"
 brew "azure/functions/azure-functions-core-tools"
 brew "heroku/brew/heroku"
 brew "mdp/tap/qrterminal"
@@ -59,7 +56,6 @@ cask "alfred"
 cask "android-studio"
 cask "appzapper"
 cask "authy"
-cask "balenaetcher"
 cask "bitwarden"
 cask "brave-browser"
 cask "brooklyn"
@@ -91,14 +87,12 @@ cask "pock"
 cask "rectangle"
 cask "signal"
 cask "sketch"
-cask "skitch"
-cask "skype"
 cask "telegram"
 cask "the-unarchiver"
 cask "tunnelblick"
 cask "xquartz"
-mas 'Amphetamine', id: 937984704 
-mas 'Dato', id: 1470584107 
-mas 'Gifski', id: 1351639930 
-mas 'Parcel', id: 639968404 
+mas 'Amphetamine', id: 937984704
+mas 'Dato', id: 1470584107
+mas 'Gifski', id: 1351639930
+mas 'Parcel', id: 639968404
 mas 'WireGuard', id: 1451685025

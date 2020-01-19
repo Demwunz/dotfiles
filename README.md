@@ -1,136 +1,76 @@
-# Dotfiles
+# Mr F's dotfiles
 
-For more information about dotfiles, I wrote these articles on my blog:
-* [Dotfiles: automating macOS system configuration](https://kalis.me/dotfiles-automating-macos-system-configuration/)
-* [Increasing development productivity with repository management](https://kalis.me/increasing-development-productivity-repository-management/)
-* [Set up a Hyper Key with Hammerspoon on macOS](https://kalis.me/setup-hyper-key-hammerspoon-macos/)
+This repository is for my personal computer. They are customised specifically for **macOS**, but you can edit them as you see fit.
+
+## Tools
+
+I like to use package managers for most applications and settings, and rely heavily upon them, particularly:
+
+- [Homebrew](https://brew.sh) - For installing pretty much everything including command line tools and desktop applications
+- [asdf](https://asdf-vm.com/) - For managing multiple runtime environments (node, ruby, dart etc...)
+- [Zplugin](https://github.com/zdharma/zplugin) - For installing and managing my ZSH installation.
 
 ## Usage
-1. Restore your safely backed up ssh keys to `~/.ssh/`
-    1. Alternatively, generate new ssh keys, and add these to your GitHub account
-2. Install Homebrew and git
-  ```bash
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew install git
-  ```
-3. Clone this repository
-  ```
-  git clone git@github.com:rkalis/dotfiles.git
-  ```
-4. Run the `bootstrap.sh` script
-    1. Alternatively, only run the `setup.sh` scripts in specific subfolders if you don't need everything
-5. (Optional) Install missing applications from the internet
-  * [Popcorn Time](https://popcorntime.sh/)
-  * [Pyxel Edit](http://pyxeledit.com/)
-  * [TransIP Stack](https://www.transip.nl/stack/)
-6. (Optional) Point the Alfred preference sync to the right folder
-7. Login to applications, enter license keys, set preferences
+In order to use the dotfiles. there are several shell scripts included.
 
-## Customisation
-I strongly encourage you to play around with the configurations, and add or remove features.
-If you would like to use these dotfiles for yourself, I'd recommend changing at least the following:
+I use a `Brewfile` to keep a track of all of the taps and casks for Homebrew. To export them I used `brew bundle dump`
 
-#### Git
-* The .gitconfig file includes my [user] config, replace these with your own user name and email
+### Installation
+To install the software, asdf and sync the configuration, there is a script called `bin/install.sh` that executes relevant commands.
 
-#### OSX
-* At the top of the setup.sh file, my computer name is set, replace this with your own computer name
+### Command line tools included
 
-####  Packages
-This folder is a collection of the programs and utilities I use frequently. These lists can easily be amended to your liking.
+I have found and used modern replacements for many command line tools, mainly because I prefer the user experience and usability.
 
-#### Repos
-This folder is a collection of my own repos, some of which are even private. The existing lists can easily be edited or replaced by custom lists.
+These are all installed via Homebrew.
 
-## Contents
+- [bat](https://github.com/sharkdp/bat) - A `cat(1)` clone with wings. 
+- [exa](https://github.com/ogham/exa) - `exa` is a replacement for `ls` written in Rust.
+- [fzf](https://github.com/junegunn/fzf) - `fzf` is a general-purpose command-line fuzzy finder.
+- [fd](https://github.com/sharkdp/fd) - A simple, fast and user-friendly alternative to `find` 
+- [fx](https://github.com/antonmedv/fx) - Command-line tool and terminal JSON viewer
+- [ripgrep](https://github.com/BurntSushi/ripgrep) - ripgrep recursively searches directories for a regex pattern
+- [httpie](https://github.com/jakubroztocil/httpie) - Modern command line HTTP client – user-friendly curl alternative with intuitive UI...
+- [hub](https://github.com/github/hub) - A command-line tool that makes git easier to use with GitHub. 
+- [jq](https://github.com/stedolan/jq) - `jq` is like `sed` for JSON data
+- [thefuck](https://github.com/nvbn/thefuck) - Magnificent app which corrects your previous console command.
 
-### Root (/)
-* bootstrap.sh - Calls all setup.sh scripts
 
-### User Bin (bin/)
-* setup.sh - Symlinks the other contents of the folder to `~/bin/`
-* imgcat - A utility to display images inline in iTerm 2
-* sethidden - A shell script which takes command line arguments to show or hide
-hidden files
-* togglehidden - A shell script that toggles between showing and hiding hidden
-files
+### Command prompt themes
 
-### Duti (duti/)
-* setup.sh - Sets the defaults set up in the different files
-* app.package.id - Contains all extensions for the specified program
+If I decide to switch from ZSH to BASH shell.
 
-### Fish (fish/)
-* setup.sh - Symlinks all fish files to their corresponding location in `~/.config/fish/`
-* config.fish - Global fish configuration (.fishrc)
-* completions/
-  * conda.fish - Contains completions to all `conda` commands
-  * repo.fish - Contains all repos as completions for the `repo` command
-  * repodir.fish - Contains all repos as completions for the `repodir` command
-* functions/
-  * abbrex.fish - Utility for expanding abbreviations in fish-scripts
-  * clear.fish - Clears the screen and shows fish_greeting
-  * emptytrash.fish - Empties trash and clears system logs
-  * enter_service.fish - Enter a Docker swarm service
-  * fish_greeting.fish - Fish greeting with fish logo
-  * fish_prompt.fish - The Classic + Git prompt from the fish web config
-  * fisher.fish - Fish plugin manager
-  * forrepos.fish - Executes a passed command for all repos in `~/repos`
-  * git.fish - Alias to GitHub's `hub` utility
-  * ls.fish - Calling ls with parameter --color=auto
-  * manp.fish - Open a man page in Preview
-  * mvnpurge.fish - Purge local mvn repository
-  * proxy.fish - Open a proxy to my server
-  * pubkey.fish - Copies the SSH public key to the clipboard
-  * repo.fish - Finds a repository in `~/repos` and jumps to it
-  * repodir.fish - Finds a repository in `~/repos` and prints its path
-  * setup.fish - Initial setup for a new fish installation,
-  contains abbreviations
-  * update.fish - Installs OS X Software Updates, updates Ruby gems, Homebrew,
-  npm, and their installed packages
-  * week.fish - Returns the current week number
+ZSH prompt is [powerlevel10k](https://github.com/romkatv/powerlevel10k) - A fast reimplementation of Powerlevel9k ZSH theme
 
-### Git (git/)
-* setup.sh - Symlinks all git files to `~/`
-* .gitignore_global - Contains global gitignores, such as OS-specific files and
-several compiled files
-* .gitconfig - Sets several global Git variables
+BASH prompt is [starship](https://starship.rs/) - Rust powered customizable cross-shell prompt
 
-### Hammerspoon (hammerspoon/)
-* setup.sh - Symlinks all lua and AppleScript files to `~/.hammerspoon/`
-* init.lua - Contains the main Hammerspoon config, importing the others
-* bluetooth.lua - Toggles Bluetooth headset connection
-* caffeinate.lua - Shortcuts for managing screen state (locking, etc.)
-* connect_sony.applescript - Toggles Bluetooth headset connection
-* hyper.lua - Binds the "F18" key to a Hyper mode, which can be used for
-global commands
-* minimising.lua - Shortcuts for minimising and unminimising windows
-* shortcuts.lua - Hyper key bindings to existing shortcuts
-* spectacle.lua - Window and monitor management using hyper mode
-* togglevpn.applescript - Toggles Viscosity vpn connection
-* togglevpn.lua - Binds a shortcut to the execution of `togglevpn.applescript`
+## asdf plugins
 
-### Karabiner (karabiner/)
-* setup.sh - Symlinks Karabiner settings to `~/.config/karabiner`
-* karabiner.json - Binds the CAPS LOCK key to "F18" to use with hammerspoon
+I use asdf to manage my runtime environments, it's easy and takes away a lot of pain.
+These are the [plugins](https://github.com/asdf-vm/asdf-plugins) I have installed: 
 
-### macOS Preferences (macos/)
-* setup.sh - Executes a long list of commands pertaining to macOS Preferences
+- [dart](https://github.com/PatOConnor43/asdf-dart)
+- [elixir](https://github.com/asdf-vm/asdf-elixir.git;)
+- [erlang](https://github.com/asdf-vm/asdf-erlang.git;)
+- [nodejs](https://github.com/asdf-vm/asdf-nodejs.git;)
+- [ruby](https://github.com/asdf-vm/asdf-ruby.git;)
 
-### Packages (packages/)
-* setup.sh - Installs the contents of the .list files and the Brewfile
+### Aliases
 
-### Repositories (repos/)
-* setup.sh - Clones the repositories in the .list files at the corresponding
-locations
+I've only used a few custom aliases which you can see in `.aliases` 
 
-### Helper Scripts (scripts/)
-* functions.sh - Contains helper functions for symlinking files and printing
-  progress messages
+The most notable is `alias ls='exa'` and various variations of it eg `alias ll='exa --long --git --header'`.
 
-### Vim (vim/)
-* setup.sh - Symlinks all vim files to `~/`
-* .vimrc - Basic Vim configuration
+### OSX settings
 
-### Visual Studio Code (vscode/)
-* setup.sh - Symlinks the settings.json file to `~/Library/Application Support/Code/User`
-* settings.json - Contains user settings for Visual Studio Code
+The OSX settings can be found in [`bin/osx_defaults.sh`, run it after you've customised it or just `sh bin/osx_defaults.sh` 
+
+## Contribute
+This repository has my dotfiles, but if you find a repo or something to improve, feel free to make a pull request to help me to improve my environment!
+
+## License
+This repository is released under the MIT license. See LICENSE file for more information.
+
+## Credit
+
+Heavily customised from upon [https://github.com/rkalis/dotfiles](https://github.com/rkalis/dotfiles)

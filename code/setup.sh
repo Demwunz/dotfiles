@@ -6,9 +6,9 @@ cd "$DIR" || exit
 . ../scripts/functions.sh
 
 SOURCE="$(realpath .)"
-DESTINATION="$(realpath ~/Library/Application\ Support/Code/User/)"
+DESTINATION="$(realpath ~/Library/Application\ Support/VSCodium/User/)"
 
-info "Setting up Visual Studio Code..."
+info "Setting up VSCodium..."
 
 # keybindings.json settings.json
 find * -type f -name "*.json" | while read fn; do
@@ -16,4 +16,4 @@ find * -type f -name "*.json" | while read fn; do
     symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 done
 
-success "Finished setting up Visual Studio Code"
+success "Finished setting up VSCodium"

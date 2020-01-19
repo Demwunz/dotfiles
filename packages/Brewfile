@@ -90,6 +90,7 @@ cask "sketch"
 cask "telegram"
 cask "the-unarchiver"
 cask "tunnelblick"
+cask "vscodium"
 cask "xquartz"
 mas 'Amphetamine', id: 937984704
 mas 'Dato', id: 1470584107

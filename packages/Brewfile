@@ -21,21 +21,23 @@ brew "asdf"
 brew "bash"
 brew "bash-completion@2"
 brew "bat"
-brew "gettext"
-brew "python"
 brew "cocoapods"
 brew "exa"
 brew "fd"
 brew "fx"
 brew "fzf"
 brew "gcc"
+brew "gettext"
 brew "git"
-brew "libidn2"
 brew "httpie"
 brew "hub"
 brew "ipfs"
+brew "libidn2"
+brew "python"
 brew "libxslt"
+brew "mas"
 brew "neovim"
+brew "nim"
 brew "ranger"
 brew "ripgrep"
 brew "screenfetch"
@@ -67,6 +69,7 @@ cask "font-fira-code"
 cask "font-microsoft-office"
 cask "fontbase"
 cask "franz"
+cask "google-backup-and-sync"
 cask "gpg-suite"
 cask "iina"
 cask "insomnia"
@@ -92,8 +95,8 @@ cask "the-unarchiver"
 cask "tunnelblick"
 cask "vscodium"
 cask "xquartz"
-mas 'Amphetamine', id: 937984704
-mas 'Dato', id: 1470584107
-mas 'Gifski', id: 1351639930
-mas 'Parcel', id: 639968404
-mas 'WireGuard', id: 1451685025
+mas "Amphetamine", id: 937984704
+mas "Dato", id: 1470584107
+mas "Gifski", id: 1351639930
+mas "Parcel", id: 639968404
+mas "WireGuard", id: 1451685025

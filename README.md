@@ -73,4 +73,4 @@ This repository is released under the MIT license. See LICENSE file for more inf
 
 ## Credit
 
-Heavily customised from upon [https://github.com/rkalis/dotfiles](https://github.com/rkalis/dotfiles)
+Heavily customised from [https://github.com/rkalis/dotfiles](https://github.com/rkalis/dotfiles)

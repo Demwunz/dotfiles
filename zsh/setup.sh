@@ -23,13 +23,13 @@ set_brew_zsh() {
         success "zsh shell via brew is already set up."
     else
         info "changing shell to brew zsh version, password required..."
-        sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+        sudo echo $brewzsh >> /etc/shells
+        # sudo dscl . -create /Users/$USER UserShell $brewzsh
         substep_info "Using $brewzsh to install zsh dependencies"
         exec $brewzsh
 
         substep_info "Installing zinit for zsh"
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-        sh zinit self-update
         source ~/.zshrc
     fi
 }

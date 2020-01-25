@@ -75,8 +75,6 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-syntax-highlighting
 
 zinit light zsh-users/zsh-history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
 zinit snippet OMZ::plugins/asdf/asdf.plugin.zsh
 zinit snippet OMZ::plugins/dotenv/dotenv.plugin.zsh
@@ -92,6 +90,10 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit pack for ls_colors
 
 # zsh settings ###########################################################
+# up and down keys for substring searches
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+# dont store repeated commands in history once is enough. only add new ones
 setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt inc_append_history

@@ -82,7 +82,6 @@ zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/heroku/heroku.plugin.zsh
 zinit snippet OMZ::plugins/safe-paste/safe-paste.plugin.zsh
-# zinit snippet OMZ::plugins/ssh-agent/ssh-agent.plugin.zsh
 zinit snippet 'https://github.com/lincheney/fzf-tab-completion/blob/master/zsh/fzf-zsh-completion.sh'
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k

@@ -1,3 +1,4 @@
+albert.TabOut
 alefragnani.project-manager
 antfu.i18n-ally
 apollographql.vscode-apollo
@@ -35,9 +36,11 @@ jasonnutter.search-node-modules
 jdinhlife.gruvbox
 joelday.docthis
 jpoissonnier.vscode-styled-components
+kisstkondoros.typelens
 kisstkondoros.vscode-codemetrics
 kisstkondoros.vscode-gutter-preview
 kumar-harsh.graphql-for-vscode
+mhutchie.git-graph
 mjmcloug.vscode-elixir
 mrmlnc.vscode-scss
 ms-vscode.node-debug2
@@ -52,6 +55,7 @@ robertrossmann.remedy
 sburg.vscode-javascript-booster
 smlombardi.slime
 Stepsize.tech-debt-tracker
+TabNine.tabnine-vscode
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vsls-contrib.gistfs

@@ -12,8 +12,9 @@ fi;
 
 # If you come from bash you might have to change your $PATH. #############
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Homebrew requires this #################################################
+# cargo | brew install cargo
+export PATH=$HOME/.cargo/bin:$PATH
+# Homebrew requires this #
 export PATH="/usr/local/sbin:$PATH"
 
 # flutter stuff ##########################################################

@@ -47,9 +47,9 @@ These are all installed via Homebrew.
 
 If I decide to switch from ZSH to BASH shell.
 
-ZSH managed via [zinit](https://github.com/zdharma/zinit) - Ultra-flexible and fast Zsh plugin manager
-ZSH prompt is [powerlevel10k](https://github.com/romkatv/powerlevel10k) - A fast reimplementation of Powerlevel9k ZSH theme
-BASH prompt is [starship](https://starship.rs/) - Rust powered customizable cross-shell prompt
+- ZSH managed via [zinit](https://github.com/zdharma/zinit) - Ultra-flexible and fast Zsh plugin manager
+- ZSH prompt is [powerlevel10k](https://github.com/romkatv/powerlevel10k) - A fast reimplementation of Powerlevel9k ZSH theme
+- BASH prompt is [starship](https://starship.rs/) - Rust powered customizable cross-shell prompt
 
 ## asdf plugins
 

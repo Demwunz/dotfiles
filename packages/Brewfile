@@ -65,16 +65,13 @@ cask "authy"
 cask "bitwarden"
 cask "brave-browser"
 cask "brooklyn"
-cask "chromium"
 cask "cryptomator"
 cask "daisydisk"
 cask "electrum"
-cask "evernote"
 cask "font-fira-code"
 cask "font-microsoft-office"
 cask "fontbase"
 cask "franz"
-cask "fsnotes"
 cask "gpg-suite"
 cask "iina"
 cask "intel-haxm"
@@ -108,7 +105,6 @@ mas "Dato", id: 1470584107
 mas "Gifski", id: 1351639930
 mas "JPEGmini", id: 498944723
 mas "JSON Helper", id: 453114608
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "Pages", id: 409201541
 mas "Parcel", id: 639968404
 mas "PhotoBulk Lite", id: 1304315057

@@ -8,15 +8,12 @@ I like to use package managers for most applications and settings, and rely heav
 
 - [Homebrew](https://brew.sh) - For installing pretty much everything including command line tools and desktop applications
 - [asdf](https://asdf-vm.com/) - For managing multiple runtime environments (node, ruby, dart etc...)
-- [Zplugin](https://github.com/zdharma/zplugin) - For installing and managing my ZSH installation.
-
-## Usage
-In order to use the dotfiles. there are several shell scripts included.
-
-I use a `Brewfile` to keep a track of all of the taps and casks for Homebrew. To export them I used `brew bundle dump`
+- [Zinit](https://github.com/zdharma/zinit) - For installing and managing my ZSH installation.
 
 ### Installation
-To install the software, asdf and sync the configuration, there is a script called `bin/install.sh` that executes relevant commands.
+`$ ./install.sh`
+
+[![asciicast](https://asciinema.org/a/Ix2ZHryGg7JofmG3oQyS0XjPE.svg)](https://asciinema.org/a/Ix2ZHryGg7JofmG3oQyS0XjPE)
 
 ### Command line tools included
 
@@ -29,10 +26,11 @@ These are all installed via Homebrew.
 - [fzf](https://github.com/junegunn/fzf) - `fzf` is a general-purpose command-line fuzzy finder.
 - [fd](https://github.com/sharkdp/fd) - A simple, fast and user-friendly alternative to `find` 
 - [fx](https://github.com/antonmedv/fx) - Command-line tool and terminal JSON viewer
-- [ripgrep](https://github.com/BurntSushi/ripgrep) - ripgrep recursively searches directories for a regex pattern
 - [httpie](https://github.com/jakubroztocil/httpie) - Modern command line HTTP client – user-friendly curl alternative with intuitive UI...
+- [lf](https://github.com/gokcehan/lf) - lf (as in "list files") is a terminal file manager written in Go. 
 - [hub](https://github.com/github/hub) - A command-line tool that makes git easier to use with GitHub. 
 - [jq](https://github.com/stedolan/jq) - `jq` is like `sed` for JSON data
+- [ripgrep](https://github.com/BurntSushi/ripgrep) - ripgrep recursively searches directories for a regex pattern
 - [thefuck](https://github.com/nvbn/thefuck) - Magnificent app which corrects your previous console command.
 
 
@@ -55,16 +53,6 @@ These are the [plugins](https://github.com/asdf-vm/asdf-plugins) I have installe
 - [nodejs](https://github.com/asdf-vm/asdf-nodejs.git;)
 - [ruby](https://github.com/asdf-vm/asdf-ruby.git;)
 
-### Aliases
-
-I've only used a few custom aliases which you can see in `.aliases` 
-
-The most notable is `alias ls='exa'` and various variations of it eg `alias ll='exa --long --git --header'`.
-
-### OSX settings
-
-The OSX settings can be found in [`bin/osx_defaults.sh`, run it after you've customised it or just `sh bin/osx_defaults.sh` 
-
 ## Contribute
 This repository has my dotfiles, but if you find a repo or something to improve, feel free to make a pull request to help me to improve my environment!
 
@@ -73,4 +61,4 @@ This repository is released under the MIT license. See LICENSE file for more inf
 
 ## Credit
 
-Heavily customised from [https://github.com/rkalis/dotfiles](https://github.com/rkalis/dotfiles)
+Heavily customised and stolen ideas from loads of repos

@@ -13,7 +13,7 @@ info "Installing Brewfile packages..."
 brew bundle
 success "Finished installing Brewfile packages."
 
-find * -name "*.list" | while read fn; do
+find * -name "*.txt" | while read fn; do
     cmd="${fn%.*}"
     set -- $cmd
     info "Installing $1 packages..."

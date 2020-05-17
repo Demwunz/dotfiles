@@ -42,7 +42,14 @@ fi
 ./packages/setup.sh
 
 find * -name "setup.sh" -not -wholename "packages*" | while read setup; do
-    ./$setup
+    ./"$setup"
+done
+
+info "Using stow to manage symlinks..."
+dotfiles=(bash git zsh)
+
+for i in "${dotfiles[@]}";
+    do stow --restow --ignore="setup.sh" "$i" -v;
 done
 
 success "Finished installing Dotfiles"

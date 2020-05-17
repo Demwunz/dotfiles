@@ -1,11 +1,11 @@
-#! /usr/bin/env sh
+! /usr/bin/env sh
 
 DIR=$(dirname "$0")
 cd "$DIR" || exit
 
 . ../scripts/functions.sh
 
-info "Configuring asdf..."
+info "Configuring asdf runtimes..."
 
 find . -type f -name ".tool-versions" | while read fn; do
 
@@ -32,5 +32,9 @@ find . -type f -name ".tool-versions" | while read fn; do
     success "Finished installing $1"
 
 done
+
+info "Stow asdf..."
+
+    stow --adopt --ignore='setup.sh' --target="$(realpath ~/)" --dir="$(realpath .)" . -v
 
 success "Finished configuring asdf."

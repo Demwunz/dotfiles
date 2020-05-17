@@ -5,15 +5,15 @@ cd "$DIR" || exit
 
 . ../scripts/functions.sh
 
-SOURCE="realpath ."
-DESTINATION="realpath ~/Library/Application\ Support/VSCodium/User/"
+SOURCE="$(realpath .)"
+DESTINATION="$(realpath ~/Library/Application\ Support/VSCodium/User/)"
 
 info "Setting up VSCodium..."
 
 # keybindings.json settings.json
-# find * -type f -name "*.json" | while read fn; do
-#     fn=$(basename "$fn")
-#     stow --adopt --simulate --ignore='setup.sh' --target="$(realpath ~/Library/Application\ Support/VSCodium/User)" --dir="$(realpath .)" . -v
-# done
+find * -type f -name "*.json" | while read fn; do
+    fn=$(basename "$fn")
+    symlink "$SOURCE/$fn" "$DESTINATION/$fn"
+done
 
 success "Finished setting up VSCodium"

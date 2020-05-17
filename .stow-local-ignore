@@ -1,0 +1,6 @@
+.DS_Store
+^/packages
+^/duti
+^/code
+^/**/*.sh
+^/*.sh

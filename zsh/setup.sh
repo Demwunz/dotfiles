@@ -5,15 +5,7 @@ cd "$DIR" || exit
 
 . ../scripts/functions.sh
 
-SOURCE="$(realpath .)"
-DESTINATION="$(realpath ~/)"
-
 info "Setting up zsh shell..."
-
-find . -type f -name ".*" | while read fn; do
-    fn=$(basename "$fn")
-    symlink "$SOURCE/$fn" "$DESTINATION/$fn"
-done
 
 set_brew_zsh() {
     current="$(which $SHELL)"

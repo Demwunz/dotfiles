@@ -5,15 +5,9 @@ cd "$DIR" || exit
 
 . ../scripts/functions.sh
 
-SOURCE="$(realpath .)"
-DESTINATION="$(realpath ~)"
-
 info "Configuring asdf..."
 
 find . -type f -name ".tool-versions" | while read fn; do
-
-    fn=$(basename "$fn")
-    symlink "$SOURCE/$fn" "$DESTINATION/$fn"
 
     info "Installing $1 runtime..."
 

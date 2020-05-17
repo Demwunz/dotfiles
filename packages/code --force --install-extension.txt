@@ -45,6 +45,7 @@ JuanBlanco.solidity
 kisstkondoros.typelens
 kisstkondoros.vscode-codemetrics
 kisstkondoros.vscode-gutter-preview
+kiteco.kite
 kumar-harsh.graphql-for-vscode
 mgmcdermott.vscode-language-babel
 mhutchie.git-graph
@@ -66,7 +67,6 @@ robertrossmann.remedy
 sburg.vscode-javascript-booster
 smlombardi.slime
 Stepsize.tech-debt-tracker
-TabNine.tabnine-vscode
 VisualStudioExptTeam.vscodeintellicode
 vscode-icons-team.vscode-icons
 vsls-contrib.codetour

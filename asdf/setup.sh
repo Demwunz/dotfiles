@@ -33,8 +33,4 @@ find . -type f -name ".tool-versions" | while read fn; do
 
 done
 
-info "Stow asdf..."
-
-    stow --adopt --ignore='setup.sh' --target="$(realpath ~/)" --dir="$(realpath .)" . -v
-
 success "Finished configuring asdf."

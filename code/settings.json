@@ -19,5 +19,6 @@
     "prettier.semi": false,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "kite.showWelcomeNotificationOnStartup": false
 }

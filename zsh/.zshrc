@@ -42,11 +42,14 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-history-substring-search
 
 zinit snippet OMZ::plugins/dotenv/dotenv.plugin.zsh
-zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
+#zinit snippet OMZ::plugins/fzf/fzf.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/heroku/heroku.plugin.zsh
 zinit snippet OMZ::plugins/safe-paste/safe-paste.plugin.zsh
 zinit light Aloxaf/fzf-tab
+
+# Download the package with the default ice list
+zplugin pack"default+keys" for fzf
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
@@ -69,7 +72,7 @@ eval $(thefuck --alias oops)
 . $(brew --prefix asdf)/asdf.sh
 
 # https://github.com/junegunn/fzf | brew install fzf #####################
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # https://gist.github.com/ctechols/ca1035271ad134841284  #################
 autoload -Uz compinit

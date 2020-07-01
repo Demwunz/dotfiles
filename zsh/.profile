@@ -5,6 +5,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 # Homebrew requires this #
 export PATH="/usr/local/sbin:$PATH"
 
+# export brew python
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
+
 # flutter stuff ##########################################################
 export INTEL_HAXM_HOME=/usr/local/Caskroom/intel-haxm
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)

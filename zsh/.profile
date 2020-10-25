@@ -16,10 +16,14 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 export npm_config_loglevel=silent
 
 # fd, fzf | brew install fd fzf ##########################################
+
 # https://github.com/junegunn/fzf#tips
 # find files anywhere
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # https://mike.place/2017/fzf-fd/
 # search within files in current directory
 export FZF_ALT_C_COMMAND="rg --sort-files --files --null 2> /dev/null | xargs -0 dirname | uniq"
+
+export BYOBU_PREFIX=/usr/local

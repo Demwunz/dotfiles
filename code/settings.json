@@ -1,7 +1,8 @@
 {
     "workbench.colorTheme": "Tokyo Night",
     "workbench.iconTheme": "helium-icon-theme",
-    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'FiraCode-Retina', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "polacode.transparentBackground": true,

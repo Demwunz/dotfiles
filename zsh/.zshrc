@@ -46,7 +46,7 @@ zinit snippet OMZ::plugins/dotenv/dotenv.plugin.zsh
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/heroku/heroku.plugin.zsh
 zinit snippet OMZ::plugins/safe-paste/safe-paste.plugin.zsh
-zinit light Aloxaf/fzf-tab
+# zinit light Aloxaf/fzf-tab
 
 # Download the package with the default ice list
 zplugin pack"default+keys" for fzf
@@ -71,9 +71,6 @@ eval $(thefuck --alias oops)
 # https://asdf-vm.com/ | brew install asdf ###############################
 . $(brew --prefix asdf)/asdf.sh
 
-# https://github.com/junegunn/fzf | brew install fzf #####################
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # https://gist.github.com/ctechols/ca1035271ad134841284  #################
 autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
@@ -84,3 +81,6 @@ fi;
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh. #########
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.dotfiles/zsh/.p10k.zsh.
+[[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh

@@ -31,7 +31,7 @@ alias jctl='journalctl'
 alias ip='curl ipinfo.io/ip'
 
 # browserstack
-alias browserstack='/usr/local/Caskroom/browserstacklocal/latest/BrowserStackLocal --key QeHwUrhfX1U5i3PR5uJE --force-local;'
+alias browserstack='/usr/local/Caskroom/browserstacklocal/latest/BrowserStackLocal --key KEY --force-local;'
 
 # postgres
 alias pgstart='/Users/fkhan/.asdf/installs/postgres/14.1/bin/pg_ctl -D /Users/fkhan/.asdf/installs/postgres/14.1/data -l logfile start'

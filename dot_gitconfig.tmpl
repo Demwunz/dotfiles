@@ -1,0 +1,30 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Faz
+	email = "{{ .email }}"
+	signingKey = A3CF93A12E45C278B428B5DF66875874ED6BD632
+[commit]
+  gpgsign = true
+[protocol "keybase"]
+  allow = always
+[core]
+	editor = code --wait
+  longpaths = true
+  excludesfile = /Users/fkhan/.gitignore_global
+  pager = delta
+[diff]
+  tool = vscode
+  colorMoved = default
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+[push]
+	autoSetupRemote = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+[merge]
+    conflictstyle = diff3

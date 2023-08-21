@@ -1,0 +1,42 @@
+# let homebrew work
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# If you come from bash you might have to change your $PATH. #############
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# cargo | brew install cargo
+export PATH=$HOME/.cargo/bin:$PATH
+
+# Homebrew requires this #
+export PATH="/usr/local/sbin:$PATH"
+
+# export brew python
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
+
+# https://exo.deref.io/ | curl -sL https://exo.deref.io/install | sh | exo uninstall
+export PATH="$HOME/.exo/bin:$PATH"
+
+# NPM log level (silent, error,warn, verbose, silly) #####################
+export npm_config_loglevel=silent
+
+# https://github.com/junegunn/fzf#tips
+# find files anywhere
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# https://mike.place/2017/fzf-fd/
+# search within files in current directory
+export FZF_ALT_C_COMMAND="rg --sort-files --files --null 2> /dev/null | xargs -0 dirname | uniq"
+
+# https://github.com/asdf-community/asdf-rust#configuration
+export RUST_WITHOUT=rust-docs
+
+# https://github.com/spicetify/spicetify-cli
+export PATH=$PATH:/Users/fazal/.spicetify
+
+# https://github.com/ms-jpq/sad
+# https://github.com/dandavison/delta
+export GIT_PAGER='delta'
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

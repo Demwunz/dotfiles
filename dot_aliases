@@ -1,0 +1,42 @@
+# homebrew python ########################################
+alias python=$(brew --prefix)/bin/python3
+alias python3=$(brew --prefix)/bin/python3
+alias pip=pip3
+
+# map ls to exa | brew install exa #######################
+alias ls='exa'
+alias la='exa -a'
+alias ll='exa --long --git --header'
+alias lrg='exa --recurse --grid'
+alias lah='exa -la --header'
+alias lt='exa -T'
+alias ltl='exa --tree --level=2'
+alias llfu='exa -bghHliS --git'
+
+# map vi to neovim #######################################
+alias vi='nvim'
+alias vim='nvim'
+
+# map cat to bat | brew install bat ######################
+alias cat='bat'
+
+# map ps to procs | brew install procs ######################
+alias ps='procs'
+
+# systemd  ###############################################
+alias sctl='systemctl'
+alias jctl='journalctl'
+
+# curl stuff
+alias ip='curl ipinfo.io/ip'
+
+# browserstack
+alias browserstack='/usr/local/Caskroom/browserstacklocal/latest/BrowserStackLocal --key QeHwUrhfX1U5i3PR5uJE --force-local;'
+
+# postgres
+alias pgstart='/Users/fkhan/.asdf/installs/postgres/14.1/bin/pg_ctl -D /Users/fkhan/.asdf/installs/postgres/14.1/data -l logfile start'
+
+# gds cli
+# alias gds='gds-cli'
+
+alias wifi='wifi-password'

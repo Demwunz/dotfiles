@@ -1,0 +1,167 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# https://stackoverflow.com/a/26020688/542369
+[[ -e ~/.zprofile ]] && emulate sh -c 'source $HOME/.zprofile'
+[[ -e ~/.aliases ]] && emulate sh -c 'source $HOME/.aliases'
+
+# highlight keyword when using up//down to complete current command ######
+typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=green,bold'
+typeset -g HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=magenta,bold'
+
+# curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+# autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+### End of zinit installer's chunk #######################################
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+zinit ice blockf;
+
+zinit ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX"
+
+zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+
+zinit ice wait'1' lucid
+zinit light laggardkernel/zsh-thefuck
+
+zinit ice wait'!' lucid
+zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# zinit ice wait lucid
+# zinit load redxtech/zsh-asdf-direnv
+
+zinit ice as"program" pick"bin/git-fuzzy"
+zinit light bigH/git-fuzzy
+
+zplugin ice pick'init.zsh' blockf
+zplugin light laggardkernel/git-ignore
+alias gi="git-ignore"
+
+# Install fzf
+# https://github.com/zdharma-continuum/zinit-packages
+zinit pack"default+keys" for fzf
+# zinit pack for fzy
+
+zinit ice from"gh-r" as"program" mv"docker* -> docker-compose" bpick"*linux*"
+zinit load docker/compose
+
+# https://github.com/zdharma-continuum/zinit-annex-meta-plugins
+zinit load zdharma-continuum/zinit-annex-meta-plugins
+zinit for annexes zsh-users+fast @sharkdp fuzzy console-tools zdharma
+# zinit light zsh-users/zsh-history-substring-search
+
+# zinit light chitoku-k/fzf-zsh-completions
+# zinit light Aloxaf/fzf-tab
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
+
+zinit ice from"gh-r" as"program" mv"docker* -> docker-compose"
+zinit light docker/compose
+
+# jarun/nnn, a file browser, using the for-syntax
+zinit pick"misc/quitcd/quitcd.zsh" sbin make light-mode for jarun/nnn
+zinit pack for ls_colors
+
+###############
+zinit ice wait'!'
+zinit snippet OMZP::dotenv
+zinit ice wait'!'
+zinit snippet OMZP::git
+zinit ice wait'!'
+zinit snippet OMZP::gpg-agent
+zinit ice wait'!'
+zinit snippet OMZP::safe-paste
+zinit ice wait'!'
+zinit snippet OMZP::ssh-agent
+zinit ice wait'!'
+zinit snippet OMZP::vscode
+
+# zsh settings ##########################################################
+# up and down keys for substring searches
+# https://github.com/zdharma-continuum/zinit-configs/blob/master/vladdoster/.zshrc#L68
+if [ "$OS" = "Darwin" ]; then
+    zturbo 0a light-mode for \
+        atload'
+            bindkey "^[[A" history-substring-search-up
+            bindkey "^[[B" history-substring-search-down' \
+            zsh-users/zsh-history-substring-search \
+        ver'develop' atinit'ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20' atload'_zsh_autosuggest_start' \
+            zsh-users/zsh-autosuggestions \
+        is-snippet atload'zstyle ":completion:*" special-dirs false' \
+            PZTM::completion \
+        atload"zicompinit; zicdreplay" blockf \
+            zsh-users/zsh-completions \
+        blockf atpull'zinit creinstall -q .' \
+            zdharma-continuum/fast-syntax-highlighting
+elif [ "$OS" = "Linux" ]; then
+    # https://superuser.com/a/1296543
+    # key dict is defined in /etc/zsh/zshrc
+    bindkey "$key[Up]" history-substring-search-up
+    bindkey "$key[Down]" history-substring-search-down
+fi
+
+# Shift+Tab to get reverse menu completion ###############################
+bindkey '^[[Z' reverse-menu-complete
+
+if [ "$OS" = "Darwin" ]; then
+    zstyle :omz:plugins:ssh-agent identities demwunz-GitHub demwunz-GitLab
+elif [ "$OS" = "Linux" ]; then
+    zstyle :omz:plugins:ssh-agent identities demwunz-GitHub demwunz-GitLab
+fi
+# confirm rm DIR/* #######################################################
+unsetopt RM_STAR_SILENT
+setopt RM_STAR_WAIT
+
+# dont store repeated commands in history once is enough. only add new ones
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt inc_append_history
+
+# https://github.com/nvbn/thefuck | brew install thefuck #################
+eval $(thefuck --alias oops)
+
+# https://github.com/jdxcode/rtx#quickstart
+# cargo install rtx-cli
+# eval "$(~/bin/rtx activate zsh)"
+
+# https://asdf-vm.com/ | brew install asdf ###############################
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+# https://github.com/asdf-community/asdf-direnv ##########################
+# ~/.config/direnv/direnvrc
+eval "$(direnv hook zsh)"
+zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+   atpull'%atclone' pick"direnv" src"zhook.zsh" for \
+       direnv/direnv
+
+# A shortcut for asdf managed direnv.
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+direnv() { asdf exec direnv "$@"; }
+
+# https://github.com/denisidoro/navi/blob/master/docs/installation.md#installing-the-shell-widget
+eval "$(navi widget zsh)"
